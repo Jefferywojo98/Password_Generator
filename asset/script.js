@@ -27,7 +27,7 @@ function determineLength(){
 function determineUppercase(){
   uppercaseCheck = prompt("Do you want uppercase letters in your password? (yes or no)");
 
-    if (uppercaseCheck === null || uppercaseCheck === ""){
+    if (uppercaseCheck === null){
       alert("Please type yes or no in this question");
       determineUppercase();
     }else if (uppercaseCheck === "yes" || uppercaseCheck ==="y" || uppercaseCheck ==="Yes" || uppercaseCheck ==="YES"){
@@ -46,7 +46,7 @@ function determineUppercase(){
 function determineNumbers(){
   numberCheck = prompt("Do you want numbers in your password? (yes or no)");
 
-    if (numberCheck === null || numberCheck === ""){
+    if (numberCheck === null){
       alert("Please type yes or no in this question");
       determineNumbers();
     }else if (numberCheck === "yes" || numberCheck === "y" || numberCheck === "Yes" || numberCheck === "Yes"){
@@ -65,7 +65,7 @@ function determineNumbers(){
 //Determine whether the user wants to have a special characters in the password
 function determineSpecial(){
   specialCheck = prompt("Do you want special characters in your password? (yes or no)");
-    if (specialCheck === null || specialCheck === ""){
+    if (specialCheck === null){
       alert("Please type yes or no in this question");
       determineSpecial();
     }else if (specialCheck === "yes" || specialCheck ==="y"|| specialCheck ==="Y" || specialCheck ==="Yes"|| specialCheck ==="YES"){
