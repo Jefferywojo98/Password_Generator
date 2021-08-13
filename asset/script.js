@@ -23,30 +23,26 @@ function determineLength(){
     }
     return passwordLength;
 }
-//Determine whether the user wants to include uppercase characters in the user password
+//Determine whether the user wants to include a uppercase characters in the user password
 function determineUppercase(){
   uppercaseCheck = prompt("Do you want uppercase letters in your password? (yes or no)");
 
     if (uppercaseCheck === null || uppercaseCheck === ""){
       alert("Please type yes or no in this question");
       determineUppercase();
-
     }else if (uppercaseCheck === "yes" || uppercaseCheck ==="y" || uppercaseCheck ==="Yes" || uppercaseCheck ==="YES"){
       uppercaseCheck = true;
       return uppercaseCheck;
-
     }else if (uppercaseCheck === "no" || uppercaseCheck ==="n"  || uppercaseCheck ==="No" || uppercaseCheck ==="NO"){
       uppercaseCheck = false;
       return uppercaseCheck;
-    
     }else {
       alert("Please type yes or no in your question");
       determineUppercase();
     }
     return uppercaseCheck;
 }
-
-//determine whether the user wants to include numbers in the password
+//determine whether the user wants to have a numbers in the password
 function determineNumbers(){
   numberCheck = prompt("Do you want numbers in your password? (yes or no)");
 
@@ -66,16 +62,16 @@ function determineNumbers(){
     return numberCheck;
 }
 
-//To determine whether the user wants to include special characters in the password
+//Determine whether the user wants to have a special characters in the password
 function determineSpecial(){
   specialCheck = prompt("Do you want special characters in your password? (yes or no)");
     if (specialCheck === null || specialCheck === ""){
       alert("Please type yes or no in this question");
       determineSpecial();
-    }else if (specialCheck === "yes" || specialCheck ==="y" || specialCheck ==="Yes"|| specialCheck ==="YES"){
+    }else if (specialCheck === "yes" || specialCheck ==="y"|| specialCheck ==="Y" || specialCheck ==="Yes"|| specialCheck ==="YES"){
       specialCheck = true;
       return specialCheck;
-    }else if (specialCheck === "no" || specialCheck ==="n" || specialCheck ==="No" || specialCheck ==="NO"){
+    }else if (specialCheck === "no" || specialCheck ==="n" || specialCheck ==="N" || specialCheck ==="No" || specialCheck ==="NO"){
       specialCheck = false;
       return specialCheck;
     }else {
@@ -106,17 +102,28 @@ if (uppercaseCheck && numberCheck && specialCheck){
 //them it will select character from each string to generate a password for the user
 }else if (uppercaseCheck && numberCheck){
   characters += uppercaseChar + numberChar;
+  // if user select number and special character 
+//them it will select from each string from the number and special characters to generate a password for the user
 }else if (numberCheck && specialCheck){
   characters += numberChar + specialChar;
+  // if user select uppercase and special character 
+//them it will select from each string from the uppercase and special characters to generate a password for the user
 }else if (uppercaseCheck && specialCheck){
   characters += uppercaseChar + specialChar;
+  // if user select uppercase  
+// it will only pick string from the uppercase
 }else if (uppercaseCheck){
   characters += uppercaseChar;
+  // if user select numbers
+// it will only pick string from the numbers
 }else if(numberCheck){
   characters += numberChar;
+  // if user select special characters
+// it will only pick string from the special characters
 }else if (specialCheck){
   characters += specialChar;
 }
+// This connect to the characters that the user slected and generate the length with the slected character pick
 console.log(characters)
   for(var i = 0; i < passwordLength; i++){
     password += characters.charAt(Math.floor(Math.random() * characters.length));
