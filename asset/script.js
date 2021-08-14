@@ -30,10 +30,7 @@ function determineLength(){
 function determineUppercase(){
   uppercaseCheck = prompt("Do you want uppercase letters in your password? (yes or no)");
 
-    if (uppercaseCheck === null){
-      alert("Please type yes or no in this question");
-      determineUppercase();
-    }else if (uppercaseCheck === "yes" || uppercaseCheck ==="Yes" || uppercaseCheck ==="YES" || uppercaseCheck ==="y" || uppercaseCheck ==="Y"){
+    if (uppercaseCheck === "yes" || uppercaseCheck ==="Yes" || uppercaseCheck ==="YES" || uppercaseCheck ==="y" || uppercaseCheck ==="Y"){
       uppercaseCheck = true;
       return uppercaseCheck;
     }else if (uppercaseCheck === "no" || uppercaseCheck ==="No" || uppercaseCheck ==="NO" || uppercaseCheck ==="n" || uppercaseCheck ==="N"){
@@ -51,7 +48,7 @@ function determineNumbers(){
   numberCheck = prompt("Do you want numbers in your password? (yes or no)");
 
     if (numberCheck === null){
-      alert("Please type yes or no in this question");
+      alert("Please type yes or no");
       determineNumbers();
     }else if (numberCheck === "yes" || numberCheck === "Yes" || numberCheck === "YES" || numberCheck === "Y" || numberCheck === "y"){
       numberCheck = true;
@@ -60,7 +57,7 @@ function determineNumbers(){
       numberCheck = false;
       return numberCheck;
     }else {
-      alert("Please type yes or no in this question");
+      alert("Please type yes or no ");
       determineNumbers();
     }
     return numberCheck;
@@ -69,7 +66,7 @@ function determineNumbers(){
 function determineSpecial(){
   specialCheck = prompt("Do you want special characters in your password? (yes or no)");
     if (specialCheck === null){
-      alert("Please type yes or no in this question");
+      alert("Please type yes or no");
       determineSpecial();
     }else if (specialCheck === "yes" || specialCheck ==="Yes"|| specialCheck ==="YES" || specialCheck ==="y"|| specialCheck ==="Y"){
       specialCheck = true;
