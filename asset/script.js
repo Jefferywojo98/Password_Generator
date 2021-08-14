@@ -8,12 +8,13 @@ var passwordLeath;
 var uppercaseCheck;
 var numberCheck;
 var specialCheck;
-var characters = lowercaseChar;
-  console.log(characters);
+var character = lowercaseChar;
+  console.log(character);
 
 
 //Determine the length of the password for the user
 function determineLength(){
+
   passwordLength = prompt("how many characters long you'd like your password to be between 8-128 characters: ");
     if (isNaN(passwordLength)){
       alert("Please use the number characters between 8-128 instead of letters or nothing.");
@@ -47,10 +48,7 @@ function determineUppercase(){
 function determineNumbers(){
   numberCheck = prompt("Do you want numbers in your password? (yes or no)");
 
-    if (numberCheck === null){
-      alert("Please type yes or no");
-      determineNumbers();
-    }else if (numberCheck === "yes" || numberCheck === "Yes" || numberCheck === "YES" || numberCheck === "Y" || numberCheck === "y"){
+    if (numberCheck === "yes" || numberCheck === "Yes" || numberCheck === "YES" || numberCheck === "Y" || numberCheck === "y"){
       numberCheck = true;
       return numberCheck;
     }else if (numberCheck === "no" || numberCheck === "No" || numberCheck === "NO" || numberCheck === "N" || numberCheck === "n"){
@@ -65,13 +63,11 @@ function determineNumbers(){
 //Determine whether the user wants to have a special characters in the password
 function determineSpecial(){
   specialCheck = prompt("Do you want special characters in your password? (yes or no)");
-    if (specialCheck === null){
-      alert("Please type yes or no");
-      determineSpecial();
-    }else if (specialCheck === "yes" || specialCheck ==="Yes"|| specialCheck ==="YES" || specialCheck ==="y"|| specialCheck ==="Y"){
+
+    if (specialCheck === "yes" || specialCheck ==="Yes"|| specialCheck ==="YES" || specialCheck ==="y"|| specialCheck ==="Y"){
       specialCheck = true;
       return specialCheck;
-    }else if (specialCheck === "no" || specialCheck ==="No" || specialCheck ==="NO" || specialCheck ==="n" || specialCheck ==="N"){
+f    }else if (specialCheck === "no" || specialCheck ==="No" || specialCheck ==="NO" || specialCheck ==="n" || specialCheck ==="N"){
       specialCheck = false;
       return specialCheck;
     }else {
@@ -94,36 +90,36 @@ function generatePassword(){
 //them it will select character from each string to generate a password for the user
 // If the user pick none to all of the option them, they will just get lowercase characters.
 if (uppercaseCheck && numberCheck && specialCheck){
-  characters += uppercaseChar + numberChar + specialChar;
+  character += uppercaseChar + numberChar + specialChar;
   // if user select uppercase number and special character 
 //them it will select character from each string to generate a password for the user
 }else if (uppercaseCheck && numberCheck){
-  characters += uppercaseChar + numberChar;
+  character += uppercaseChar + numberChar;
     // if user select uppercase and special character 
 //them it will select from each string from the uppercase and special characters to generate a password for the user
 }else if (uppercaseCheck && specialCheck){
-  characters += uppercaseChar + specialChar;
+  character += uppercaseChar + specialChar;
   // if user select number and special character 
 //them it will select from each string from the number and special characters to generate a password for the user
 }else if (numberCheck && specialCheck){
-  characters += numberChar + specialChar;
+  character += numberChar + specialChar;
   // if user select uppercase  
 // it will only pick string from the uppercase
 }else if (uppercaseCheck){
-  characters += uppercaseChar;
+  character += uppercaseChar;
    // if user select special characters
 // it will only pick string from the special characters
 }else if (specialCheck){
-  characters += specialChar;
+  character += specialChar;
   // if user select numbers
 // it will only pick string from the numbers
 }else if(numberCheck){
-  characters += numberChar;
+  character += numberChar;
 }
 // This connect to the characters that the user slected and generate the length with the slected character pick
-console.log(characters)
-  for(var i = 0; i < passwordLength; i++){
-    password += characters.charAt(Math.floor(Math.random() * characters.length));
+console.log(character)
+  for(var i = 0; i< passwordLength; i++){
+    password += character.charAt(Math.floor(Math.random() * character.length));
   }
   return password;
 }
