@@ -1,4 +1,4 @@
-// the var code
+// the var/containers 
 var generateBtn = document.querySelector("#generate");
 var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -13,7 +13,7 @@ var specialCheck;
 function determineLength(){
   passwordLength = prompt("how many characters long you'd like your password to be between 8-128 characters: ");
     if (isNaN(passwordLength)){
-      alert("Please use the number characters between 8-128 instead of letters.");
+      alert("Please use the number characters between 8-128 instead of letters or nothing.");
       determineLength();  
     }else if (passwordLength<8 || passwordLength>128){
       alert("Password length is to short or to long. Please try picking a number between 8-128 characters.");
@@ -30,10 +30,10 @@ function determineUppercase(){
     if (uppercaseCheck === null){
       alert("Please type yes or no in this question");
       determineUppercase();
-    }else if (uppercaseCheck === "yes" || uppercaseCheck ==="y" || uppercaseCheck ==="Yes" || uppercaseCheck ==="YES"){
+    }else if (uppercaseCheck === "yes" || uppercaseCheck ==="y" || uppercaseCheck ==="Y" || uppercaseCheck ==="Yes" || uppercaseCheck ==="YES"){
       uppercaseCheck = true;
       return uppercaseCheck;
-    }else if (uppercaseCheck === "no" || uppercaseCheck ==="n"  || uppercaseCheck ==="No" || uppercaseCheck ==="NO"){
+    }else if (uppercaseCheck === "no" || uppercaseCheck ==="n" || uppercaseCheck ==="N" || uppercaseCheck ==="No" || uppercaseCheck ==="NO"){
       uppercaseCheck = false;
       return uppercaseCheck;
     }else {
@@ -49,10 +49,10 @@ function determineNumbers(){
     if (numberCheck === null){
       alert("Please type yes or no in this question");
       determineNumbers();
-    }else if (numberCheck === "yes" || numberCheck === "y" || numberCheck === "Yes" || numberCheck === "Yes"){
+    }else if (numberCheck === "yes" || numberCheck === "y" || numberCheck === "Y" || numberCheck === "Yes" || numberCheck === "Yes"){
       numberCheck = true;
       return numberCheck;
-    }else if (numberCheck === "no" || numberCheck === "n" || numberCheck === "NO" || numberCheck === "No"){
+    }else if (numberCheck === "no" || numberCheck === "n" || numberCheck === "N" || numberCheck === "NO" || numberCheck === "No"){
       numberCheck = false;
       return numberCheck;
     }else {
