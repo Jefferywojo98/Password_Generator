@@ -8,6 +8,9 @@ var passwordLeath;
 var uppercaseCheck;
 var numberCheck;
 var specialCheck;
+var characters = lowercaseChar;
+  console.log(characters);
+
 
 //Determine the length of the password for the user
 function determineLength(){
@@ -19,7 +22,7 @@ function determineLength(){
       alert("Password length is to short or to long. Please try picking a number between 8-128 characters.");
       determineLength()
     }else{
-    alert("In the next three screens it would ask you what type of characters you would like to be included in your password. If you choose 'NO' for all of the three screens, your password will only generate lowercase letters.");
+    alert("In the next three screens it would ask you what type of characters you would like to be included in your password. If you choose 'NO' for all of the three option, your password will only generate lowercase letters.");
     }
     return passwordLength;
 }
@@ -50,7 +53,7 @@ function determineNumbers(){
     if (numberCheck === null){
       alert("Please type yes or no in this question");
       determineNumbers();
-    }else if (numberCheck === "yes" || numberCheck === "Yes" || numberCheck === "YES" || numberCheck === "Yes" || numberCheck === "Yes"){
+    }else if (numberCheck === "yes" || numberCheck === "Yes" || numberCheck === "YES" || numberCheck === "Y" || numberCheck === "y"){
       numberCheck = true;
       return numberCheck;
     }else if (numberCheck === "no" || numberCheck === "No" || numberCheck === "NO" || numberCheck === "N" || numberCheck === "n"){
@@ -90,37 +93,35 @@ function generatePassword(){
   console.log(numberCheck);
   determineSpecial();
   console.log(specialCheck);
-var characters = lowercaseChar;
-  console.log(characters);
-var password = "";
 // if user select uppercase number and special character 
 //them it will select character from each string to generate a password for the user
+// If the user pick none to all of the option them, they will just get lowercase characters.
 if (uppercaseCheck && numberCheck && specialCheck){
   characters += uppercaseChar + numberChar + specialChar;
   // if user select uppercase number and special character 
 //them it will select character from each string to generate a password for the user
 }else if (uppercaseCheck && numberCheck){
   characters += uppercaseChar + numberChar;
+    // if user select uppercase and special character 
+//them it will select from each string from the uppercase and special characters to generate a password for the user
+}else if (uppercaseCheck && specialCheck){
+  characters += uppercaseChar + specialChar;
   // if user select number and special character 
 //them it will select from each string from the number and special characters to generate a password for the user
 }else if (numberCheck && specialCheck){
   characters += numberChar + specialChar;
-  // if user select uppercase and special character 
-//them it will select from each string from the uppercase and special characters to generate a password for the user
-}else if (uppercaseCheck && specialCheck){
-  characters += uppercaseChar + specialChar;
   // if user select uppercase  
 // it will only pick string from the uppercase
 }else if (uppercaseCheck){
   characters += uppercaseChar;
+   // if user select special characters
+// it will only pick string from the special characters
+}else if (specialCheck){
+  characters += specialChar;
   // if user select numbers
 // it will only pick string from the numbers
 }else if(numberCheck){
   characters += numberChar;
-  // if user select special characters
-// it will only pick string from the special characters
-}else if (specialCheck){
-  characters += specialChar;
 }
 // This connect to the characters that the user slected and generate the length with the slected character pick
 console.log(characters)
@@ -140,5 +141,4 @@ function writePassword() {
 function resetText(){
   document.getElementById("password").value = "Your Secure Password";
 }
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
