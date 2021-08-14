@@ -131,10 +131,10 @@ console.log(characters)
 
 // Write password to the input
 function writePassword() {
-  var passwordgen = "";
-  passwordgen = generatePassword();
+  var passwordGen = "";
+  passwordGen = generatePassword();
   var passwordText = document.querySelector("#password");
-  passwordText.value = passwordgen;
+  passwordText.value = passwordGen;
 }
 function resetText(){
   document.getElementById("password").value = "Your Secure Password";
