@@ -30,10 +30,10 @@ function determineUppercase(){
     if (uppercaseCheck === null){
       alert("Please type yes or no in this question");
       determineUppercase();
-    }else if (uppercaseCheck === "yes" || uppercaseCheck ==="y" || uppercaseCheck ==="Y" || uppercaseCheck ==="Yes" || uppercaseCheck ==="YES"){
+    }else if (uppercaseCheck === "yes" || uppercaseCheck ==="Yes" || uppercaseCheck ==="YES" || uppercaseCheck ==="y" || uppercaseCheck ==="Y"){
       uppercaseCheck = true;
       return uppercaseCheck;
-    }else if (uppercaseCheck === "no" || uppercaseCheck ==="n" || uppercaseCheck ==="N" || uppercaseCheck ==="No" || uppercaseCheck ==="NO"){
+    }else if (uppercaseCheck === "no" || uppercaseCheck ==="No" || uppercaseCheck ==="NO" || uppercaseCheck ==="n" || uppercaseCheck ==="N"){
       uppercaseCheck = false;
       return uppercaseCheck;
     }else {
@@ -41,6 +41,7 @@ function determineUppercase(){
       determineUppercase();
     }
     return uppercaseCheck;
+    
 }
 //determine whether the user wants to have a numbers in the password
 function determineNumbers(){
@@ -49,10 +50,10 @@ function determineNumbers(){
     if (numberCheck === null){
       alert("Please type yes or no in this question");
       determineNumbers();
-    }else if (numberCheck === "yes" || numberCheck === "y" || numberCheck === "Y" || numberCheck === "Yes" || numberCheck === "Yes"){
+    }else if (numberCheck === "yes" || numberCheck === "Yes" || numberCheck === "YES" || numberCheck === "Yes" || numberCheck === "Yes"){
       numberCheck = true;
       return numberCheck;
-    }else if (numberCheck === "no" || numberCheck === "n" || numberCheck === "N" || numberCheck === "NO" || numberCheck === "No"){
+    }else if (numberCheck === "no" || numberCheck === "No" || numberCheck === "NO" || numberCheck === "N" || numberCheck === "n"){
       numberCheck = false;
       return numberCheck;
     }else {
@@ -67,10 +68,10 @@ function determineSpecial(){
     if (specialCheck === null){
       alert("Please type yes or no in this question");
       determineSpecial();
-    }else if (specialCheck === "yes" || specialCheck ==="y"|| specialCheck ==="Y" || specialCheck ==="Yes"|| specialCheck ==="YES"){
+    }else if (specialCheck === "yes" || specialCheck ==="Yes"|| specialCheck ==="YES" || specialCheck ==="y"|| specialCheck ==="Y"){
       specialCheck = true;
       return specialCheck;
-    }else if (specialCheck === "no" || specialCheck ==="n" || specialCheck ==="N" || specialCheck ==="No" || specialCheck ==="NO"){
+    }else if (specialCheck === "no" || specialCheck ==="No" || specialCheck ==="NO" || specialCheck ==="n" || specialCheck ==="N"){
       specialCheck = false;
       return specialCheck;
     }else {
