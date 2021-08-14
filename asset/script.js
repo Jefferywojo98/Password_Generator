@@ -60,8 +60,7 @@ function determineNumbers(){
       determineNumbers();
     }
     return numberCheck;
-}
-
+  }
 //Determine whether the user wants to have a special characters in the password
 function determineSpecial(){
   specialCheck = prompt("Do you want special characters in your password? (yes or no)");
@@ -80,8 +79,7 @@ function determineSpecial(){
     }
     return specialCheck;
 }
-
- //Generate a password aswell as seeing if the statement true, false and what character did the user pick 
+ //Generate a password aswell as seeing if the statement true, false from the character that the user pick 
 function generatePassword(){
   determineLength();
   console.log(passwordLength);
@@ -138,10 +136,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = passwordgen;
 }
-
 function resetText(){
   document.getElementById("password").value = "Your Secure Password";
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
