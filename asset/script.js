@@ -76,7 +76,7 @@ f    }else if (specialCheck === "no" || specialCheck ==="No" || specialCheck ===
     }
     return specialCheck;
 }
- //Generate a password aswell as seeing if the statement true, false from the character that the user pick 
+ //Generate a password aswell as seeing if the statement true, false from the character that the user pick from the console
 function generatePassword(){
   determineLength();
   console.log(passwordLength);
@@ -88,7 +88,7 @@ function generatePassword(){
   console.log(specialCheck);
 // if user select uppercase number and special character 
 //them it will select character from each string to generate a password for the user
-// If the user pick none to all of the option them, they will just get lowercase characters.
+// If the user pick none to all of the option, they will just get lowercase characters.
 if (uppercaseCheck && numberCheck && specialCheck){
   character += uppercaseChar + numberChar + specialChar;
   // if user select uppercase number and special character 
